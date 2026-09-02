@@ -1,4 +1,4 @@
-function projectHandler(){
+function projectManager(){
     let projects = [];
 
     const addProject = (project) => {
@@ -21,4 +21,4 @@ function projectHandler(){
     }
 }
 
-export { projectHandler };
+export { projectManager };
