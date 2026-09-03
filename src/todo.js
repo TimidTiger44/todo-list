@@ -38,6 +38,9 @@ function createTodo(title, description, dueDate, priority) {
         get priority() {
             return todoPriority;
         },
+        get completed() {
+            return completed
+        }
         changePriority,
         isDueThisWeek,
         isPassedDue
