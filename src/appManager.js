@@ -1,6 +1,6 @@
-import { projectManager } from "./src/projectManager.js";
-import { createProject } from "./src/project.js";
-import { createTodo } from "./src/todo.js";
+import { projectManager } from "./projectManager.js";
+import { createProject } from "./project.js";
+import { createTodo } from "./todo.js";
 
 function appManager() {
 

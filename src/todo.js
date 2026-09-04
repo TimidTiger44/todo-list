@@ -1,6 +1,7 @@
 import { addDays, isAfter, isWithinInterval } from 'date-fns';
 
-function createTodo(title, description, dueDate, priority) {
+function createTodo(title, description, rawDueDate, priority) {
+    const dueDate = new Date(rawDueDate);
     let todoPriority = priority;
     let completed = false;
 
@@ -34,13 +35,13 @@ function createTodo(title, description, dueDate, priority) {
     return {
         title,
         description,
-        dueDate,
+        rawDueDate,
         get priority() {
             return todoPriority;
         },
         get completed() {
             return completed
-        }
+        },
         changePriority,
         isDueThisWeek,
         isPassedDue
