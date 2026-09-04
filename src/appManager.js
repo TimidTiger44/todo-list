@@ -12,8 +12,9 @@ manager.addProject(defaultProject);
 
 let currentProject = defaultProject;
 
-const addNewProject = (project) => {
-    manager.addProject(project);
+const addNewProject = (name, description) => {
+    const newProject = createProject(name, description);
+    manager.addProject(newProject);
 };
 
 const addTodoToCurrentProject = (name, description, dueDate, priority) => {
