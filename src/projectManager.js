@@ -14,10 +14,15 @@ function projectManager(){
 
     const getProjects = () => projects;
 
+    const toJSON = () => {
+        return projects;
+    };
+
     return {
         addProject,
         removeProject,
-        getProjects
+        getProjects, 
+        toJSON
     }
 }
 

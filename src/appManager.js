@@ -10,7 +10,7 @@ const manager = projectManager();
 
 // helper function to save typing
 const save = () => {
-    localStorage.setItem("projects", JSON.stringify(manager.getProjects()));
+    localStorage.setItem("projects", JSON.stringify(manager));
     };
 
 const savedProjects = localStorage.getItem("projects");
@@ -35,6 +35,8 @@ const addNewProject = (name, description) => {
     manager.addProject(newProject);
     save();
 };
+
+// need logic for removing projects
 
 const addTodoToCurrentProject = (name, description, dueDate, priority) => {
     const todoToAdd = createTodo(name, description, dueDate, priority);

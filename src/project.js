@@ -12,6 +12,14 @@ function createProject(name , description) {
         }
     }
 
+    const toJSON = () => {
+        return {
+            name,
+            description,
+            todoList
+        };
+    };
+
     const getTodoList = () => [...todoList];
 
     return {
@@ -19,6 +27,7 @@ function createProject(name , description) {
         description,
         addTodoItem,
         removeTodoItem,
+        toJSON,
         getTodoList
     }
 }

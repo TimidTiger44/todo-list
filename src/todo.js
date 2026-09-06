@@ -32,6 +32,16 @@ function createTodo(title, description, rawDueDate, priority) {
         });
     };
 
+    const toJSON = () => {
+        return {
+            title,
+            description,
+            dueDate,
+            priority: todoPriority,
+            completed
+        }
+    };
+
     return {
         title,
         description,
@@ -44,7 +54,8 @@ function createTodo(title, description, rawDueDate, priority) {
         },
         changePriority,
         isDueThisWeek,
-        isPassedDue
+        isPassedDue,
+        toJSON
     };
 
 }
