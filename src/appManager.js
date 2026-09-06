@@ -19,6 +19,18 @@ if (savedProjects) {
     const parsedProjects = JSON.parse(savedProjects);
     parsedProjects.forEach(p => {
         const project = createProject(p.name, p.description);
+        // don't technically need the conditional, but want to keep anyways
+        if (p.todolist && p.todoList.length > 0) {
+            p.todoList.forEach(todo => {
+                const todoToAppend = createTodo(todo.title, todo.description, todo.dueDate, todo.priority);
+
+                if (todo.completed) {
+                    todoToAppend.toggleCompleted();
+                }
+                
+                project.addTodoItem(todoToAppend);
+            })
+        }
         manager.addProject(project);
     });
 } else {
