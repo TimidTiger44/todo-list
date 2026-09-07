@@ -27,7 +27,7 @@ if (savedProjects) {
                 if (todo.completed) {
                     todoToAppend.toggleCompleted();
                 }
-                
+
                 project.addTodoItem(todoToAppend);
             })
         }
@@ -48,13 +48,28 @@ const addNewProject = (name, description) => {
     save();
 };
 
-// need logic for removing projects
+const removeProject = (project) => {
+    manager.removeProject(project);
+
+    if (currentProject === project) {
+        currentProject = manager.getProjects()[0];
+    }
+
+    save();
+};
+
 
 const addTodoToCurrentProject = (name, description, dueDate, priority) => {
     const todoToAdd = createTodo(name, description, dueDate, priority);
     currentProject.addTodoItem(todoToAdd);
     save();
 };
+
+const removeTodoFromCurrentProject = (todo) => {
+    currentProject.removeTodoItem(todo);
+    save();
+}
+
 
 const setCurrentProject = (project) => {
     currentProject = project;
